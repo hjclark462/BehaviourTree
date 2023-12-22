@@ -1,9 +1,6 @@
-﻿namespace AISystem.BehaviourTrees
+﻿public enum NodeState
 {
-    public enum NodeState
-    {
-        RUNNING,
-        SUCCESS,
-        FAILURE
-    }
+    RUNNING,
+    SUCCESS,
+    FAILURE
 }

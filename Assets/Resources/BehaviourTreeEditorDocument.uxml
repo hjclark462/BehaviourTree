@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/Resources/BehaviourTreeEditorStyle.uss?fileID=7433441132597879392&amp;guid=ad6bd22838de77540abdd3fde0ed58f4&amp;type=3#BehaviourTreeEditorStyle" />
+    <ui:VisualElement name="container" style="flex-grow: 1;">
+        <uie:Toolbar>
+            <uie:ToolbarButton text="Save Behaviour Tree" display-tooltip-when-elided="true" name="save-button" />
+        </uie:Toolbar>
+        <BTSplitView name="split-view">
+            <BTInspectorView name="inspector-view" />
+            <BTGraphView focusable="true" name="graph-view" />
+        </BTSplitView>
+    </ui:VisualElement>
+</ui:UXML>

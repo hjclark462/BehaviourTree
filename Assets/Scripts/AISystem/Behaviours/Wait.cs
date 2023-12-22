@@ -1,27 +1,24 @@
 ﻿using UnityEngine;
-using AISystem.BehaviourTrees;
 
-namespace AISystem.Behaviours
+public class Wait : ActionNode
 {
-    public class Wait : ActionNode
+    public float m_duration = 1f;
+    float m_startTime;
+
+    protected override void BeginNode()
     {
-        public float m_duration = 1f;
-        float m_startTime;
+        base.BeginNode();
+        m_startTime = Time.time;
+    }
 
-        protected override void BeginNode()
+    protected override NodeState Update(float dt)
+    {
+        if (Time.time - m_startTime >= m_duration)
         {
-            base.BeginNode();
-            m_startTime = Time.time;
+            return NodeState.SUCCESS;
         }
 
-        protected override NodeState Update(float dt)
-        {
-            if (Time.time - m_startTime >= m_duration)
-            {
-                return NodeState.SUCCESS;
-            }
-
-            return NodeState.RUNNING;
-        }
+        return NodeState.RUNNING;
     }
 }
+

@@ -1,4 +1,4 @@
-namespace AISystem.BehaviourTrees
+namespace AISystem
 {
     [System.Serializable]
     public abstract class Node

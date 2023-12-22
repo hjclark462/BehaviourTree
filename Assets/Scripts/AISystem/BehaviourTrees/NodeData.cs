@@ -1,10 +1,7 @@
 using UnityEngine;
 
-namespace AISystem.BehaviourTrees
+[System.Serializable]
+public class NodeData
 {
-    [System.Serializable]
-    public class NodeData
-    {
-        public Rect m_position;
-    }
+    public Rect m_position;
 }

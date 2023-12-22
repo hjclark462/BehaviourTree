@@ -1,8 +1,8 @@
-﻿namespace AISystem.BehaviourTrees
+﻿using AISystem;
+
+public abstract class ConditionalNode : Node
 {
-    public abstract class ConditionalNode : Node
-    {
-        protected override NodeState Update(float dt) => Compare(dt) ? NodeState.SUCCESS : NodeState.FAILURE;
-        protected abstract bool Compare(float dt);
-    }
+    protected override NodeState Update(float dt) => Compare(dt) ? NodeState.SUCCESS : NodeState.FAILURE;
+    protected abstract bool Compare(float dt);
 }
+

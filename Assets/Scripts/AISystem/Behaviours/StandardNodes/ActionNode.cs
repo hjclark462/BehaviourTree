@@ -1,6 +1,5 @@
-﻿namespace AISystem.BehaviourTrees
+﻿using AISystem;
+public abstract class ActionNode : Node
 {
-    public abstract class ActionNode : Node
-    {
-    }
 }
+

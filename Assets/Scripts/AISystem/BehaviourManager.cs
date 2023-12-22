@@ -1,19 +1,14 @@
-using AISystem.BehaviourTrees;
-
-namespace AISystem
+public class BehaviourManager
 {
-    public class BehaviourManager
+    BehaviourTree m_behaviourTree;
+
+    public BehaviourManager(BehaviourTree bt)
     {
-        BehaviourTree m_behaviourTree;
+        m_behaviourTree = bt;
+    }
 
-        public BehaviourManager(BehaviourTree bt)
-        {
-            m_behaviourTree = bt;
-        }
-
-        public void Update(float dt)
-        {
-            m_behaviourTree.Update(dt);
-        }
+    public void Update(float dt)
+    {
+        m_behaviourTree.Update(dt);
     }
 }

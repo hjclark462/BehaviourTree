@@ -1,18 +1,13 @@
-using AISystem.Data;
-
-namespace AISystem.Sensors
+public interface IOptic
 {
-    public interface IOptic
-    {
-        event System.Action<Observation> m_observations;
+    event System.Action<Observation> m_observations;
 
-        void StartOptics();
-        void StopOptics();
-    }
+    void StartOptics();
+    void StopOptics();
 }
-   
 
-   
 
-   
+
+
+
 

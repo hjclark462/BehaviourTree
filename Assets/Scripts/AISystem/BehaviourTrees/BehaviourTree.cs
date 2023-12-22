@@ -1,35 +1,32 @@
 using System;
 using UnityEngine;
+using AISystem;
 
-namespace AISystem.BehaviourTrees
+[System.Serializable]
+public class BehaviourTree
 {
-    [System.Serializable]
-    public class BehaviourTree
+    BehaviourInput m_input;
+
+    [SerializeReference] public Node m_parent;
+    [SerializeReference] public Node[] m_nodes = Array.Empty<Node>();
+
+    public BehaviourTree(Node[] nodes)
     {
-        BehaviourInput m_input;
+        m_nodes = nodes;
+        m_parent = m_nodes[0];
+    }
 
-        [SerializeReference] public Node m_parent;
-        [SerializeReference] public Node[] m_nodes = Array.Empty<Node>();
-
-        public BehaviourTree(Node[] nodes)
+    public void SetBehaviourInput(BehaviourInput input)
+    {
+        m_input = input;
+        foreach (Node node in m_nodes)
         {
-            m_nodes = nodes;
-            m_parent = m_nodes[0];
-        }
-
-        public void SetBehaviourInput(BehaviourInput input)
-        {
-            m_input = input;
-            foreach (Node node in m_nodes)
-            {
-                node.SetBehaviourInput(input);
-            }
-        }
-
-        public void Update(float dt)
-        {
-            m_parent.Evaluate(dt);
+            node.SetBehaviourInput(input);
         }
     }
 
+    public void Update(float dt)
+    {
+        m_parent.Evaluate(dt);
+    }
 }
